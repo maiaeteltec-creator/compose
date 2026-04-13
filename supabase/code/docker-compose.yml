@@ -431,6 +431,8 @@ services:
   supavisor:
     image: supabase/supavisor:2.5.7
     restart: unless-stopped
+    ports:
+      - "15432:5432"
     volumes:
       - ./volumes/pooler/pooler.exs:/etc/pooler/pooler.exs:ro,z
     healthcheck:
